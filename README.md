@@ -20,11 +20,9 @@ Department: CSE(CS)
 ```
 ```
 M = 9
-
 def print_grid(grid):
     for row in grid:
         print(row)
-
 def is_safe(grid, row, col, num):  
     for x in range(9):
         if grid[row][x] == num:
@@ -32,7 +30,6 @@ def is_safe(grid, row, col, num):
     for x in range(9):
         if grid[x][col] == num:
             return False
-
     start_row = row - row % 3
     start_col = col - col % 3
     for i in range(3):
@@ -40,7 +37,6 @@ def is_safe(grid, row, col, num):
             if grid[i + start_row][j + start_col] == num:
                 return False
     return True
-
 def solve_sudoku(grid, row=0, col=0):
     if row == M - 1 and col == M:
         return True
@@ -56,7 +52,6 @@ def solve_sudoku(grid, row=0, col=0):
                 return True
         grid[row][col] = 0
     return False
-
 if __name__ == "__main__":
     puzzle = [
         [5, 3, 0, 0, 7, 0, 0, 0, 0],
